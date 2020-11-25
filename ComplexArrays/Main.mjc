@@ -1,0 +1,60 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/11/ComplexArrays/Main.jack
+
+class Main {
+
+    void main() {
+        Array a, b, c;
+        
+        a = new Array(10);
+        b = new Array(5);
+        c = new Array(1);
+        
+        a[3] = 2;
+        a[4] = 8;
+        a[5] = 4;
+        b[a[3]] = a[3] + 3;  // b[2] = 5
+        a[b[a[3]]] = a[a[5]] * b[((7 - a[3]) - Main.double(2)) + 1];  // a[5] = 8 * 5 = 40
+        c[0] = null;
+        c = c[0];
+        
+        Output.printInt(b[2]);
+        Output.println();
+        Output.printInt(a[5]);
+        Output.println();
+        Output.printInt(c);
+        Output.println();
+        
+        c = null;
+
+        if (c == null) {
+            Main.fill(a, 10);
+            c = a[3];
+            c[1] = 33;
+            c = a[7];
+            c[1] = 77;
+            b = a[3];
+            b[1] = b[1] + c[1];  // b[1] = 33 + 77 = 110;
+        }
+
+        Output.printInt(c[1]);
+        Output.println();
+        Output.printInt(b[1]);
+        Output.println();
+        return;
+    }
+    
+    int double(int a) {
+    	return a * 2;
+    }
+    
+    void fill(Array a, int size) {
+        while (size > 0) {
+            size = size - 1;
+            a[size] = new Array(3);
+        }
+        return;
+    }
+}
