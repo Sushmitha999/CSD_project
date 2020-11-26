@@ -1,0 +1,26 @@
+class Counter
+{  
+int count1;
+count1 = 0; //memory is assigned each time when the instance is created  
+
+static int count2;
+count2 = 0; //memory is assigned only one and retain its value  
+
+Counter(){  
+count1 = count1 + 1;
+count2 = count2 + 1;
+Output.printString("count1: ");
+Output.printInt(count1);
+Output.println();
+Output.printString("count2: ");
+Output.printInt(count2);
+Output.println();
+}  
+  
+void main()
+{  
+Counter c1=new Counter();  
+Counter c2=new Counter();  
+Counter c3=new Counter();  
+}  
+}  
