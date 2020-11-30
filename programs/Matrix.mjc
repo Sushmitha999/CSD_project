@@ -54,6 +54,17 @@ class Matrix{
                 j=0;
                 i = i+1;
             }
+            while(i<a_r){
+                col = c[i];
+                while(j<b_c){
+                    Output.printInt(col[j]);
+                    Output.printString(" ");
+                    j = j+1;
+                }
+                Output.printString("\n");
+                j=0;
+                i = i+1;
+            }
         }
         else{
             Output.printString("Matrix multiplication not compatible! ");
