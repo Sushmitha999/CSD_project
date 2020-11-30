@@ -1,0 +1,32 @@
+class SubString1{
+   void main() {
+    String s, sub_s;
+    int l,l1,i,j,flag;
+    s = "Test str";
+    sub_s = "str";
+    l = s.length();
+    l1 = s.length();
+    i = 0;
+    j = 0;
+    flag = 0;
+    while(i<l && flag==0){
+        while(j<l1){
+            if(s[i]==sub_s[j]){}
+            else{
+                j=l1;
+            }   
+            j=j+1;
+        }
+        if(j==l1){
+            Output.printString("Substring found!!"); 
+            flag = 1;  
+        }
+        j = 0;
+        i=i+1;
+    }
+    if(flag==0){
+        Output.printString("Substring not found !!");
+    }
+    return;
+   }
+}
